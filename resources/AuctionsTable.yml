@@ -1,0 +1,24 @@
+AuctionsTable:
+  Type: AWS::DynamoDB::Table 
+  Properties: 
+    TableName: AuctionsTable-${self:provider.stage}  #self - referencing serverless.yml file 
+    BillingMode: PAY_PER_REQUEST
+    AttributeDefinitions:
+      - AttributeName: id
+        AttributeType: S
+      - AttributeName: status           #these attributes will be served as Global Secondary Index
+        AttributeType: S 
+      - AttributeName: endingAt
+        AttributeType: S 
+    KeySchema:
+      - AttributeName: id
+        KeyType: HASH
+    GlobalSecondaryIndexes:             #dynamoDb creates a copy as a virtual table and allows to query according to the attributes 
+      - IndexName: statusAndEndDate
+        KeySchema:
+        - AttributeName: status
+          KeyType: HASH
+        - AttributeName: endingAt
+          KeyType: RANGE
+        Projection:                     #projection - which attributes to keep in Virtual Table
+          ProjectionType: ALL
