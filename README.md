@@ -4,7 +4,7 @@ https://codingly.io
 
 ## Serverless Framework 
 ```
-[Serverless Framework](https://www.serverless.com/framework/docs/getting-started/) is a free and open-source framework that makes it easy to develop, deploy, manage and debug Serverless applications
+Serverless Framework is a free and open-source framework that makes it easy to develop, deploy, manage and debug Serverless applications
 ```
 
 ## What's included
@@ -19,14 +19,12 @@ cd YOUR_PROJECT_NAME
 npm install
 ```
 
-You are ready to go!
-
 ## Commands used :
 ```
-* sls deploy --stage <stage_name>
-* sls deploy -v
-* sls deploy -f FUNCTION_NAME
-* sls remove
-* sls logs -f FUNCTION_NAME -t
-* sls invoke -f FUNCTION_NAME -l
+sls deploy --stage <stage_name>
+sls deploy -v
+sls deploy -f FUNCTION_NAME
+sls remove
+sls logs -f FUNCTION_NAME -t
+sls invoke -f FUNCTION_NAME -l
 ```
